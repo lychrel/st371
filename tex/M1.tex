@@ -1,0 +1,143 @@
+\documentclass[10pt]{extarticle}
+\usepackage[T1]{fontenc}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+%% zero set
+\usepackage{amssymb}
+
+%% Sets page size and margins
+\usepackage[letterpaper,top=0.5cm,bottom=0.5cm,left=0.5cm,right=0.5cm,marginparwidth=0.25cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%% red bold text
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{\textcolor{red}{\oldtextbf{#1}}}
+
+%% blue bold text
+\newcommand{\bluebf}[1]{\textcolor{blue}{#1}}
+
+%% pink bold text
+\newcommand{\pinkbf}[1]{\textcolor{pink}{\oldtextbf{#1}}}
+
+% ``see end'' 
+
+\begin{document}
+\noindent \textbf{Distribution} overall pattern of how often values occur
+\textbf{Distribution Properties} shape (\emph{symmetric} or \emph{skewed}), location, variability, deviations
+\textbf{Location} center---typically measured by \emph{mean} (avg/expected val) or median
+\textbf{Variability} typically measured by \emph{variance} or \emph{SD}, or range
+\textbf{Deviations} from overall pattern, e.g. possible outliers, or unusual points that are not consistent with rest of data
+\textbf{Stem-and-Leaf Plots} leading digits for \emph{stem}, trailing digits for \emph{leaves}; list \emph{stem} in a vertical column; record the \emph{leaf} for each obs right to the column of the \emph{stem}; indicate unit
+\textbf{Histogram} more suitable for big data sets 
+\textbf{Sample Mean} $\bar{x} = \frac{\sum_{i=1}^{n}x_{i}}{n}$ for $x_{1}...x_{n}$
+\textbf{Sample Mean as Location} may not be representative; more robust would be
+\textbf{Sample Median as Location} middle value of a data set; robust (not sensitive) to outliers
+\textbf{Sample Median} \underline{for odd $n$}, $\tilde{x} = x_{(n+1)/2}$ \underline{for even $n$}, $\tilde{x} = \frac{x_{(n/2)} + x_{(n/2+1)}}{2}$
+\textbf{Sample $\bar{x}$, $\tilde{x}$ vs Population} sample mean is ``estimate'' of population mean ($\mu$); sample median is ``estimate'' of population median. Estimation improves as sample size grows
+\textbf{($\bar{x}$, $\tilde{x}$) for Distro Shapes} \underline{if symmetric}, mean=median \underline{if right-skewed,} mean>median \underline{if left-skewed,} mean<median
+\textbf{Variability as Sample Variance} $s^{2} = \frac{\sum_{i=1}^{n}(x_{i}^{2}) - n^{-1}(\sum_{i=1}^{n}(x_{i}))^{2}}{n-1}$
+\textbf{Sample Standard Deviation} $s=\sqrt{s^{2}}$
+\textbf{Sample S.D. Properties} $S$ has same unit as data---can be interpreted as \emph{representative deviation} of data from center
+\textbf{Sample Variance \& S.D. vs Population} sample variance $S^{2}$ is an ``estimate'' of population variance ($\sigma^{2}$); sample S.D. $s$ is an ``estimate'' of population SD ($\sigma$). Estimation improves as sample size grows
+\textbf{Experiment} any action or process whose outcome is subject to uncertainty (e.g. flipping a coin, rolling a die)
+\textbf{Sample Space} set of all possible outcomes of an experiment ($\varsigma$) e.g. flipping one coin, $\varsigma=$(H,T) \emph{order of outcomes matters!}
+\textbf{Event} any collection of outcomes from the sample space (usually denoted by a capital letter)
+\textbf{Complement} of event A: set of all outcomes $\varsigma$ that are not in A ($A'$)
+\textbf{Intersection} $A=\{1,2,3\}$, $B=\{1,3,5\}$, $A\cap B = \{1,3\}$ \textbf{Union} A=\{1,2,3\}, B=\{1,3,5\}, $A\cup B = \{1,2,3,5\}$
+\textbf{Mutually Exclusive/Disjoint Events} if $A \cap B = \varnothing$
+\textbf{Important Results} $A \cap \varnothing = \varnothing$, $A \cup \varnothing = A$, $A \cap A' = \varnothing$, $A \cup A' = \varsigma$, $\varsigma ' = \varnothing$, $\varnothing ' = \varsigma$, $(A')' = A$, $(A \cap B)' = A' \cup B'$, $(A \cup B)' = A' \cap B'$
+\textbf{Probability} precise measure of the chance that a particular event will occur
+\textbf{P(A)} probability of event A occurring e.g. $P(H) = 0.5$
+\textbf{P(A) for Equally Likely Events} if outcomes in $\varsigma$ are equally likely to occur, $P(A) =$ (number of outcomes in event $A$)/(number of outcomes in $\varsigma$)
+\textbf{Probability as Long-Run Average} probability represents the proportion or percent of the time (over an extended period) we would expect an event to happen (more or less likely, from historical data) 
+\textbf{Probability and Sample Size} probability estimates based on \emph{small sample sizes} are not as reliable as those based on \emph{large sample sizes}
+\textbf{Core Properties of Probability} $P(A) \geq 0$, $P(S) = 1$, $P(A_{1}\cup A_{2}\cup ...) = \sum_{i=1}^{\infty}P(A_{i})$ for infinite series of mutually exclusive events $A_{1}...$ or for finite series of events
+\textbf{Additional Properties} $P(A) = 1 - P(A')$, $P(A) \leq 1$, $P(A\cup B) = P(A) + P(B) - P(A\cap B)$, $P(A\cup B\cup C) = P(A) + P(B) + P(C) - P(A\cap B) - P(B\cap C) - P(A\cap C) + P(A\cap B\cap C)$
+\textbf{Conditional Probability} probability of A, given B: calculated with
+\textbf{$P(A|B)$} $= \frac{P(A\cap B)}{P(B)}$ if $P(B)>0$
+\textbf{Key Idea} is that what will happen when \emph{something is known} and is thus \emph{no longer uncertain}; how often A will occur given knowledge that \emph{B has occurred}
+\textbf{Drug Test Example} $P(A|B)$ = given that the person used the drug, probability that (s)he tested positive: \emph{sensitivity}, $P(B'|A')$ = given that person did not use, probability that (s)he tested negative: \emph{specificity}
+\textbf{Probability Product Rule} $P(A\cap B) = P(A|B) \cdot P(B)$ 
+\textbf{Tree Diagram} see end
+\textbf{Video Game Example} $P(W_{2}) = P(W_{1}\cap W_{2}) + P(L_{1}\cap W_{2})$
+\textbf{Law of Total Probability} let $A_{1},...,A_{k}$ be mutually exclusive, exhaustive events. For any event B, $P(B) = P(B|A_{1})P(A_{1})+...+P(B|A_{k})P(A_{k}) = \sum_{i=1}^{k}P(B|A_{i})P(A_{i})$
+\textbf{Using LoTP for Events} LoTP allows us to calc probabilities by conditioning on other events. Sometimes it's easier to find $P(B|A)$ than $P(B)$. But if it's easier to find $P(B|A)$ than $P(A|B)$, use
+\textbf{Bayes' Theorem} for mutually exclusive and exhaustive events $A_{1},...,A_{k}$ with prior probabilities $P(A_{i})>0 (i=1,...,k)$, for any event $B$ for which $P(B)>0$, the probability of event $A_{j}$ given that $B$ has occurred is $P(A_{j}|B) = \frac{P(A_{j}\cap B)}{P(B)} = \frac{P(B|A_{j})P(A_{j})}{\sum_{i=1}^{k}P(B|A_{i})P(A_{i})}$, $j=1,...,k$
+\textbf{Bayes' Thm Properties} numerator uses multiplication (product) rule; denominator uses LoTP; Bayes' Thm is application of both together
+\textbf{Video Game Example} Given that you won your second play, probability that you won your first play is $P(W_{1}|W_{2})=\frac{P(W_{2}|W_{1})P(W_{1})}{P(W_{2}|W_{1})P(W_{1})+P(W_{2}|L_{1})P(L_{1})}$
+\textbf{Drug Test Example} probability that person took drug, given positive test, is $P(D|T+) = \frac{P(T+|D)P(D)}{P(T+|D)P(D)+P(T+|ND)P(ND)}$
+\textbf{Independence I} Two events $A$ and $B$ are \emph{independence I} \underline{iff} $P(A|B) = P(A)$; otherwise the events are \emph{dependent}
+\textbf{Temperature Example} A = Raleigh temp, B = Paris temp. A,B independent bc knowing Paris temp does not help predict Raleigh temp. If C=tomorrow's Durham high, A and C are dependent because \emph{predictions about Raleigh's temp are surely affected by knowing Durham's temp}
+\textbf{Independence II} $A$ and $B$ are independent \underline{iff} $P(A\cap B) = P(A)\cdot P(B)$
+\textbf{V.G. Example} $P(W_{2}|W_{1})=P(W_{2})$, so $W_{1}$ and $W_{2}$ are \emph{independent}; also, $P(W_{2}\cap W_{1}) = P(W_{1})P(W_{2})$, so $W_{1}$ and $W_{2}$
+\textbf{Independence for Many Events} events $A_{1},...,A_{n}$ are mutually independent if, for every $k (k=2,3,...,n)$, and every subset of indices $i_{1},i_{2},...,i_{k}$, $P(A_{i_{1}}\cap A_{i_{2}}\cap...A_{i_{k}}) = P(A_{i_{1}})\cdot P(A_{i_{2}})\cdots P(A_{i_{k}})$
+\textbf{M.C. Test} 20 q's, 4 possible answers; student has 80\% chance of being correct. q's are independent. Let $A_{j} =$ student's answer is correct on question $j$. Events are independent. Then $P($perfect score$)$ = $P(A_{1}\cap A_{2}\cap \cdots \cap A_{20}) = P(A_{1})\cdot P(A_{2}) \cdots P(A_{20}) = \prod_{j=1}^{20}0.8=0.012$
+\textbf{Circuit System Example} see end
+\textbf{Monty Hall Problem} before door opened, w/ H3 = host opened 3: no car, $P(C_{1})= P(C_{2}) = P(C_{3}) = 1/3$. Knowing $H_{3}$, $P(C_{1}|H_{3}) = \frac{P(C_{1}\cap H_{3})}{P(H_{3})} = \frac{P(H_{3}|C_{1})P(C_{1})}{P(H_{3})}$. $C_{1}, C_{2}, C_{3}$ are mutually exclusive and exhaustive: $C_{1}\cup C_{2}\cup C_{3} = \varsigma$. Therefore, $P(C_{1}|H_{3}) = \frac{P(H_{3}|C_{1})P(C_{1})}{P(H_{3}|C_{1})P(C_{1})+P(H_{3}|C_{2})P(C_{2})+P(H_{3}|C_{3})P(C_{3})}$. We know $P(H_{3}|C_{3})=0$, $P(H_{3}|C_{2})=1$ (you picked door 1), $P(H_{3}|C_{1})=1/2$ (since host randomly picks from door 2 or 3). Thus $P(C_{1}|H_{3})=P($win if stay$) = 1/3$, while $P(C_{2}|H_{3}) = P($win if switch$) = 2/3$. 
+\textbf{Data Types} \emph{quantitative} (numbers) or \emph{qualitative} (words)
+\textbf{Random Variable (rv)} a function that associates each element of sample space with a number
+\textbf{rv Notation} usually denoted by capital letters, e.g. X,Y,Z, specific values denoted by lower case, e.g. x,y,z; $P(Y=y)=$ prob that rv $Y$ equals the value $y$
+\textbf{Opinion Example} for $\varsigma=$\{Strongly agree, agree, disagree, strongly disagree\}, define X s.t. $X(SA)=1,S(A)=1,X(SD)=0,X(D)=0$
+\textbf{rv and $\varsigma$} rv's are a function with an input that is an element of the sample space and an output that is a $\Re$; any characteristic whose value can change over the sample space
+\textbf{Discrete} number of possible values is finite or countably infinite
+\textbf{Discrete rv Examples} $X=$ 1 if male, 0 if female (finite values); $X=$ \# of additional coin flips before 1st tails is obtained (countable: 0,1,2,...))
+\textbf{Continuous} X \emph{continuous} $X$ is continuous if (i) $X$ can be any value in an interval, such as $[0,1]$ or even $(-\infty,+\infty)$, or a union of disjoint intervals, AND (ii) $P(X=c)=0$ for any possible value of $c$---i.e. no individual val of $X$ has a positive probability
+\textbf{Probability Distro (pmf)} of a discrete rv: Describes how likely the possible values of $x$ (i.e. possible inputs) are to occur.
+\textbf{pmf Notation} $p(x) = P(X=x)$
+\textbf{Conditions for pmf} $p(x)\geq 0$ for any $x$; sum of $P(X=x)$ over all possible $x$ must be 1. Anything that satisfies these is a valid pmf.
+\textbf{pmf Table} see end.
+\textbf{pmf Parameters} some pmf's are indexed by parameters, which are quantities that can take any one of several possible values. Each possible value of a parameter defines a different pmf.
+\textbf{Parameter Example} $p(x) = \alpha$ if $X=1$, $1-\alpha$ if $X=0$, for $\alpha$  $\epsilon$ $(0,1)$. If $\alpha=0.5$, $P(X=1)=0.5=P(X=0)$
+\textbf{Family of Distros} set of all pmf's obtained by varying a parameter
+\textbf{Family Properties} families of distros all share a common function; not every family/function has a formal name
+\textbf{Bernoulli Family} $p(x) = \alpha$ if $X=1$, $1-\alpha$ if $X=0$, for $\alpha$  $\in$ $(0,1)$
+\textbf{$X\mathtt{\sim}$ Bernoulli$(\alpha)$} $X$ is distributed as Bernoulli with parameter $\alpha$
+\textbf{Cumulative Distribution Function (cdf)} of a drv $X$: provides probability that the observed value of $X$ will be \underline{at most} $x$: $F(x) = P(X\leq x) = \sum_{y:y\leq x}p(y)$ (sum over all values less than equal to $x$
+\textbf{Expected Value} given drv $X$, w/ set D of possible values and pmf $p(x)$. The \emph{expected value} or \emph{mean} of $X$ is:
+\textbf{$E(X)$} $= \mu_{X} = \sum_{x \in D}x\cdot p(x)$, where $E(X)$ stands for \emph{E}xpectation of \emph{X}, \underline{weighted average} of all its possible values with weights being probabilities.
+\textbf{Expected Value Properties} expected val is most commonly used measure of central tendency; it is a single number that gives some info about entire distribution. Also, a ``typical'' value for rv (tho not necessarily most common, or even a val rv can take); balancing point: mean value such that teeter-totter distro would balance; long-run signal for noisy process. Can be used to compare distros
+\textbf{Expected Value of a Function} for drv $X$, with set D of possible values, pmf $p(x)$, and function $h(X)$. Then expected value of $h(X)$ is
+\textbf{$E[h(X)]$} $= \sum_{D}h(x)\cdot p(x)$. $h(X)$ is another rv, with a dist. But we don't need the dist to find $E[h(X)]$.
+\textbf{Bernoulli $e^{x}$ Example} given $p(x) = \alpha$ if $X=1$ and $1-\alpha$ if $X=0$, what is expected val of $h(X)=e^{X}$? It's $E(e^{X}) = \sum_{x=0}^{1}e^{x}\cdot p(x) = e^{0}\cdot p(0) + e^{1}\cdot p(1) = 1\cdot(1-\alpha)+e\cdot \alpha = e\alpha -\alpha + 1$
+\textbf{$E(a+bX)$} $= a + bE(X) = a + b\mu$ where $\mu = E(X)$
+%consider putting the proof here
+\textbf{Temp Example} if $X=$ temp in F and $Y=$ temp in C $= (5/9)(X-32)$, and if $E(X)=71$F, then $E(Y)=E[\frac{5}{9}(X-32)]=\frac{5}{9}[E(X)-32]=\frac{5}{9}[71-32]$
+\textbf{Variance} of drv $X$ with set of possible values $D$, pmf $p(x)$, and mean $\mu$ is 
+\textbf{$V(X)$} $=\sigma_{X}^{2} = \sum_{D}(x-\mu)^{2} = E[(X-\mu)^{2}]$
+\textbf{Standard Deviation} is square root of variance, or
+\textbf{$\sigma_{X}$} $= \sqrt{\sigma_{X}^{2}}$ 
+\textbf{Notes on $\sigma_{X}^{2}$ and $\sigma_{X}$} both variance and SD are measured of the \emph{spread} of a distribution. Variance has squared units; SD has same units as the rv! Due to this, SD is reported in practice. 
+\textbf{$\sigma_{X}^{2}$, $\sigma_{X}$, and $\mu$} $\sigma_{X}^{2}$ represents ``expected square deviation from mean''; $\sigma_{X}$ is approx \emph{avg distance of observations from mean}. SD, with $\mu$, gives better understanding of data values: \emph{mean $\pm$ SD gives range of ``typical'' values for variable, better than just mean could}
+\textbf{Variance Equations} Variance can be represented in terms of expectations:
+\textbf{$V(X)=E(X^{2})-\mu^{2}$}, while, for a function $a+bX$, variance is
+\textbf{$V(a+bX)=b^{2}V(X)$}
+\textbf{Variance Eqn Properties} adding a constant to $X$ doesn't affect its variance: $V(a+X)=V(X)$; multiplying $X$ by a constant multiplies the SD by the magnitude of that constant: $V(bX)=b^{2}V(X)$, implies $\sigma_{bX}=|b|\sigma_{X}$
+\textbf{Table Example} find mean and variance for the rv $X$ and rv $Y=3+7X$. When possible, use shortcut formulae. If $P(X=x)=0.2$ for $X=7$, $0.6$ for $X=12$, and $0.2$ for $X=14$, then $E(X)=7(0.2)+12(0.6)+14(0.2)=11.4=\mu_{X}$; $V(X)=E(X^{2})-\mu_{X}^{2} = 135.4-11.4^{2}=5.44=\sigma_{X}^{2}$, where $E(X^{2}) = 7^{2}(0.2)+12^{2}(0.6)+14^{2}(0.2)$. $E(Y) = 3 + 7\mu_{X} = 3 + 7(11.4) = 82.8 = \mu_{Y}$, and $V(Y) = 7^{2}\sigma_{X}^{2} = 7^{2}(5.44) = 266.56 = \sigma_{Y}^{2}$
+\textbf{Combinations} unordered groups of size \emph{r} that can be formed from the \emph{n} individuals in a group is ``n choose r'', or
+\textbf{$\dbinom{n}{k}$} = $\frac{n!}{k!(n-k)!}$
+\textbf{Example} $\dbinom{20}{18}=\frac{20!}{18!2!}=190$
+% consider removing
+\textbf{Test Example} Test with 20 unrelated q's, each worth one point. $X_{j}=1$ if student is correct on question $j$, $0$ otherwise. Assume $X_{j} \mathtt{\sim}$Bernoulli are independent: i.e., pmf is $p(x) =  p$ if $X_{j}=1$, $(1-p)$ if $X_{j}=0$ for \emph{each} of the rv's. $P(perfect score) = P(X_{1}=1\cap X_{2}=1\cap...\cap X_{20}=1)=P(X_{1}=1)\cdot P(X_{2}=1)\cdots P(X_{20}=1)=p^{20}$. If $p=0.8$, $P(perfect score)=(0.8)^{20} = 0.012$. $P(18 correct)$ calculated in prior example. $P(18 correct) = (190)(p)^{18}(1-p)^{2}$
+\textbf{Binomial pmf} $\dbinom{n}{x}p^{x}(1-p)^{n-x}$
+\textbf{Binomial pmf Notation} $X\mathtt{\sim}$Bin$(n,p)$ or b$(x;n,p)$ where $X$ can take values ${0,1,2,...,n}$ ranging from all failures to all successes.
+\textbf{Binomial pmf Props} if $n=1$, Binomial$(1,p) = $Bernoulli$(p)$. Only 1 trial, $X$ can only be 0 or 1, so we have $p(x) = \dbinom{1}{1}p^{1}(1-p)^{1-1}=p$ if $X=1$, $\dbinom{1}{0}p^{0}(1-p)^{1-0}=(1-p)$ if $X=0$
+\textbf{Conditions for Using BinDist} (1) There are \underline{two possible} outcomes of each trial: ``success'' (what we are counting) and ``failure'' (everything else (2) \# trials $n$ is \underline{known and fixed} (3) outcomes are \underline{independent} from one trial to others (4) probability of ``success'' $p$ is \underline{the same for all trials}. If conditions met, $X=$\{number of total successes\} is a binomial rv with parameters $n=$number of trials/sample size, $p=$the probability of success
+\textbf{Mean of $X\mathtt{\sim}$Bin$(n,p)$} is
+\textbf{E(X)=np}, while the
+\textbf{Variance of $X\mathtt{\sim}$Bin$(n,p)$} is
+\textbf{$V(X)=np(1-p)$}
+\textbf{Maximizing $V(X)$} $V(X)$ is largest (given $n$) when $p=0.5$ \emph{because the outcome is hardest to predict!}
+\textbf{$V(X)$ Graphically} see end
+\textbf{Applying Binomial Formula} if $X\mathtt{\sim}$Bin$(n=3,p=0.1)$, what is $P(X=x)$? $P(X=0)=\dbinom{3}{0}(0.1)^0(1-0.1)^{3-0}=0.729$, while $P(X=1)=\dbinom{3}{1}(0.1)^{1}(1-0.1)^{3-1}=0.243$, $P(X=2)=\dbinom{3}{2}(0.1)^{2}(1-0.1)^{3-2}=0.027$, and $P(X=3)=\dbinom{3}{3}(0.1)^{3}(1-0.1)^{3-3}=0.001$
+% HW PROBLEMS
+\bluebf{(3.73) If $A$ and $B$ are independent events, show that $A'$ and $B$ are also independent.} By LoTP, $P(B) = P(A\cap B) + P(A'\cap B)$. Then $P(A'\cap B) = P(B) - P(A)P(B)$ (by independence of $A$ and $B$) $= [1-P(A)]P(B) = P(A')P(B)$
+\pinkbf{Ancestors protect me... :)}
+ \end{document}
