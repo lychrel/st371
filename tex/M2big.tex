@@ -1,4 +1,4 @@
-\documentclass[9pt]{extarticle}
+\documentclass[10pt]{extarticle}
 \usepackage[T1]{fontenc}
 
 %% Language and font encodings
@@ -394,51 +394,7 @@
 			So $E(Y)=E(h(X)) = \int_{1}^{2}h(x)f(x)dx=\int_{1}^{1.5}(1.5-x)2(1-x^{-2})dx
 				= 2\int_{1}^{1.5}(1.5-x-1.5/x^{2}+1/x)dx
 				=2(1.5\times 0.5 -(1.5^{2}-1)/2 - 1.5\times (1-1/1.5) + \ln{1.5})=0.061$	
-	\re{Standardizing Normal ex} Consider babies born in the ``normal'' range of 37–43 weeks
-		gestational age. Extensive data supports the assumption that for such babies born in the
-		United States, birth weight is normally distributed with mean 3432 g and standard deviation
-		482 g. [The article ``Are Babies Normal?'' (The American Statistician, 1999: 298–302)
-		analyzed data from a particular year; for a sensible choice of class intervals, a histogram
-		did not look at all normal, but after further investigations it was determined that this
-		was due to some hospitals measuring weight in grams and others measuring to the nearest
-		ounce and then converting to grams. A modified choice of class intervals that allowed for
-		this gave a histogram that was well described by a normal distribution.]
-	\pr{Standardizing Normal ex} Let $X=$ baby weight. Then \dist{X}{N}{3432,482^{2}} and
-		\pr{(a)} $P(X>4000) = P(\frac{X-3432}{482} > \frac{4000-3432}{482}) = P(Z>1.18)
-		= 1 - P(Z\leq 1.18) = 1 - 0.8810 = 0.119$ 
-		\pr{(b)} $P(3000 < X < 4000) = P(-0.9 < Z < 1.18) = P(Z<1.18) - P(Z<-0.9) = 0.881-0.1841
-			0.6969$
-		\pr{(b)} $P$[$(X<2000)\cup (X>5000)$]$= P(X<2000) + P(X>5000)
-			= P(Z<-2.97) + P(Z>3.25) = 0.0015 + 1 - 0.9994 = 0.002$. To find those values,
-				\emph{use the z-score formula for each bound}: new bound
-				$= Z = \frac{x-\mu}{\sigma}$, with $\sigma$ probably in form $\sqrt{\sigma^{2}}$
-	\re{Bin Gamma ex} Suppose that 10\% of all steel shafts produced by a certain process are
-		nonconforming but can be reworked (rather than having to be scrapped). Consider a random
-		sample of 200 shafts, and let X denote the number among these that are nonconforming and
-		can be reworked. What is the (approximate) probability that X is (a) at most 30? (b) less
-		than 30? (c) between 15 and 25 inclusive?
-	\pr{Bin Gamma ex} \dist{X}{Bin}{n=200,p=0.1}. Approximate distribution
-		\dist{Y}{Normal}{\mu=np=20, \sigma^{2}=\text{variance}=npq=18}
-			\pr{(a)} $P(X\leq 30) = P(0 - 0.5 \leq X \leq 30.5)\approx
-			P(\frac{-0.5-20}{\sqrt{18}} \leq \frac{Y-20}{\sqrt{18}} \leq \frac{30.5-20}{\sqrt{18}})
-			= P(-4.13 \leq Z \leq 2.47) = 0.993$
-			\pr{(b)} $P(X<30) = P(X\leq 29) = P(X\leq 29.5) = P(Z\leq 2.24) = 0.9875$
-			\pr{(c)} $PP(15\leq X \leq 25) = P(14.5\leq X \leq 25.5) \approx
-				P(-1.30\leq Z \leq 1.30) = 0.806$
-	\re{Exp rate ex} A consumer is trying to decide between two long-distance calling plans. The 		first one
-		charges a flat rate of 10 cents per minute, whereas the second charges a flat rate of
-		99 cents for
-		calls up to 20 minutes in duration and then 10 cents for each additional minute exceeding 20
-		(assume that calls lasting a noninteger number of minutes are charged proportion- ately to
-		a whole-minute’s charge). Suppose the consumer’s distribution of call duration is
-		exponential with parameter $\lambda$.
-		\pr{(a)} If the expected duration of calls $\lambda^{-1}$ is small, we should choose plan 1.
-			Otherwise we should choose plan 2. 
-		\pr{(b)} $h_{1}(x) = 10x$, so the expected cost for plan 1 is $E(h_{1}(X)) = 10/\lambda$.
-		$h_{2}(x) = 99$ for $x\in(0,20$], and $99 + 10(x-20)$ for $x>20$. So the expected cost for
-		plan 2 is $E(h_{2}(x)) = \int_{0}^{\infty} h_{2}(x)f(x)dx
-		= \int_{0}^{\infty}99\lambda e^{-\lambda x}dx
-		+ \int_{20}^{\infty}10(x-20)\lambda e^{-\lambda x}dx = 99 + 10e^{-20\lambda}/\lambda$
+	
 	
 	\pagebreak
 	% SHORTCUTS
